@@ -15,24 +15,26 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "",
+        index: true,
         element: <Hero />,
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register />,
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <Contact />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
       }
     ]
   }
-])
+], {
+  basename: import.meta.env.BASE_URL
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
