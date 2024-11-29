@@ -1,19 +1,30 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { motion } from "framer-motion"
 
 const About = () => {
     return (
-        <div className="min-h-screen py-16">
-            <div className="container mx-auto px-4">
+        <div className="min-h-screen py-16 overflow-x-hidden">
+            <div className="container px-4 mx-auto">
                 {/* Hero Section */}
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6">About MessMenu</h1>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="mb-16 text-center"
+                >
+                    <h1 className="mb-6 text-4xl font-bold md:text-5xl">About MessMenu</h1>
+                    <p className="max-w-2xl mx-auto text-xl text-muted-foreground">
                         Connecting hungry students with local mess halls, making it easier than ever to find your next delicious meal.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Mission Section */}
-                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="grid gap-12 mb-16 md:grid-cols-2"
+                >
                     <div className="space-y-4">
                         <h2 className="text-3xl font-bold">Our Mission</h2>
                         <p className="text-muted-foreground">
@@ -31,11 +42,16 @@ const About = () => {
                             <li>✓ Detailed reviews and ratings</li>
                         </ul>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* FAQ Section */}
-                <div className="max-w-3xl mx-auto">
-                    <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="max-w-3xl mx-auto"
+                >
+                    <h2 className="mb-8 text-3xl font-bold text-center">Frequently Asked Questions</h2>
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">
                             <AccordionTrigger>How does MessMenu work?</AccordionTrigger>
@@ -71,7 +87,7 @@ const About = () => {
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
-                </div>
+                </motion.div>
             </div>
         </div>
     )
