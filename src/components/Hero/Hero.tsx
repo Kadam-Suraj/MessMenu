@@ -1,18 +1,19 @@
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+import { hero_bg } from "@/assets"
 
 const Hero = () => {
     return (
         <div className="relative min-h-[80vh] flex items-center">
             <div className="container z-10 flex items-center justify-between px-4 mx-auto">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                     className="max-w-2xl"
                 >
-                    <motion.h1 
+                    <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -20,7 +21,7 @@ const Hero = () => {
                     >
                         Find Your Favorite Dishes Nearby
                     </motion.h1>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
@@ -28,7 +29,7 @@ const Hero = () => {
                     >
                         Discover what's cooking at local mess halls in real-time. Check menu updates and find your favorite dishes available near you.
                     </motion.p>
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
@@ -42,14 +43,14 @@ const Hero = () => {
                         </Button>
                     </motion.div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="hidden w-1/2 lg:block"
                 >
-                    <img 
-                        src="/src/assets/hero-bg.png" 
+                    <img
+                        src={hero_bg}
                         alt="Hero Background"
                         className="object-cover w-full h-full"
                     />

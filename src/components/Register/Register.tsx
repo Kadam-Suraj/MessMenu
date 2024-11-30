@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-
 import { Button } from "@/components/ui/button"
 import {
     Form,
@@ -15,6 +14,7 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { register } from "@/assets"
 
 const formSchema = z.object({
     messname: z.string().min(2, "Mess name must be at least 2 characters").max(100, "Mess name must be less than 100 characters"),
@@ -75,27 +75,27 @@ const Register = () => {
     }
 
     return (
-        <div className="flex flex-col lg:flex-row overflow-x-hidden">
-            <motion.div 
+        <div className="flex flex-col overflow-x-hidden lg:flex-row">
+            <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="lg:w-1/2 flex flex-col items-center justify-center p-8 space-y-8"
+                className="flex flex-col items-center justify-center p-8 space-y-8 lg:w-1/2"
             >
-                <h1 className="text-4xl lg:text-6xl font-bold">Register</h1>
+                <h1 className="text-4xl font-bold lg:text-6xl">Register</h1>
                 <img
-                    src="/src/assets/register.png"
+                    src={register}
                     alt="Registration Illustration"
                     className="w-full max-w-md"
                     width={500}
                     height={500}
                 />
             </motion.div>
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="lg:w-1/2 p-8"
+                className="p-8 lg:w-1/2"
             >
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-md mx-auto space-y-6">
@@ -194,7 +194,7 @@ const Register = () => {
                                                 type="button"
                                                 variant="ghost"
                                                 size="sm"
-                                                className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                                                className="absolute top-0 right-0 h-full px-3 py-2 hover:bg-transparent"
                                                 onClick={() => setShowPassword(!showPassword)}
                                             >
                                                 {showPassword ? "Hide" : "Show"}
@@ -208,7 +208,7 @@ const Register = () => {
                                 </FormItem>
                             )}
                         />
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
