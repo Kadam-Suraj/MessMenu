@@ -5,9 +5,10 @@ import './index.css'
 import Layout from './Layout'
 import { ThemeProvider } from './components/theme-provider'
 import Register from './components/Register/Register'
-import Hero from './components/Hero/Hero'
-import About from './components/About/About'
 import Contact from './components/Contact/Contact'
+import Home from './components/Home/Home'
+import Login from './components/Login/Login'
+import Dashboard from './components/Dashboard/Dashboard'
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Hero />,
+        element: <Home />,
       },
       {
         path: "register",
@@ -27,8 +28,12 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "about",
-        element: <About />,
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
       }
     ]
   }

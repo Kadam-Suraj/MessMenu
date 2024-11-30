@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 const About = () => {
     return (
-        <div className="min-h-screen py-16 overflow-x-hidden">
+        <div id="about" className="min-h-screen py-16 overflow-x-hidden">
             <div className="container px-4 mx-auto">
                 {/* Hero Section */}
                 <motion.div
@@ -33,7 +33,7 @@ const About = () => {
                             we help students make informed decisions about their daily meals.
                         </p>
                     </div>
-                    <div className="space-y-4">
+                    <div className="space-y-4 md:justify-items-center">
                         <h2 className="text-3xl font-bold">Why Choose Us</h2>
                         <ul className="space-y-2 text-muted-foreground">
                             <li>✓ Real-time menu updates</li>

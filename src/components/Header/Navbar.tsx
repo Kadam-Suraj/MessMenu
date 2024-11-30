@@ -5,13 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 const Navbar = () => {
     const navLinks = [
         { path: '/', label: 'Home', showOnHome: false },
-        { path: '/register', label: 'Register', showOnHome: true },
         { path: '/contact', label: 'Contact', showOnHome: true },
-        { path: '/about', label: 'About', showOnHome: true }
+        { path: '/login', label: 'Login', showOnHome: true },
+        { path: '/dashboard', label: 'Dashboard', showOnHome: false }
     ] as const
 
     const { pathname } = useLocation()
     const isHome = pathname === '/'
+    const isDashboard = pathname === '/dashboard'
 
     const navVariants = {
         initial: {
@@ -57,7 +58,7 @@ const Navbar = () => {
     }
 
     return (
-        <motion.nav 
+        <motion.nav
             className="flex items-center gap-4 p-4"
             initial="initial"
             animate="animate"
@@ -65,7 +66,11 @@ const Navbar = () => {
         >
             <AnimatePresence mode="sync">
                 {navLinks
-                    .filter(link => !isHome || link.showOnHome)
+                    .filter(link => 
+                        (!isHome || link.showOnHome) && // Hide home on home page
+                        (link.path !== '/dashboard' || !isDashboard) && // Hide dashboard on dashboard
+                        link.path !== pathname // Hide current page link
+                    )
                     .map(({ path, label }) => (
                         <motion.div
                             key={path}
@@ -78,8 +83,7 @@ const Navbar = () => {
                         >
                             <Link
                                 to={path}
-                                className="overflow-hidden text-sm font-medium transition-colors duration-200 hover:text-primary"
-                            >
+                                className="overflow-hidden text-sm font-medium transition-colors duration-200 hover:text-primary">
                                 {label}
                             </Link>
                         </motion.div>

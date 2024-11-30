@@ -6,7 +6,7 @@ import { hero_bg } from "@/assets"
 const Hero = () => {
     return (
         <div className="relative min-h-[80vh] flex items-center">
-            <div className="container z-10 flex items-center justify-between px-4 mx-auto">
+            <div className="container z-10 grid items-center justify-between gap-5 px-4 mx-auto lg:grid-cols-2">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -47,7 +47,7 @@ const Hero = () => {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="hidden w-1/2 lg:block"
+                    className="w-10/12 mx-auto"
                 >
                     <img
                         src={hero_bg}
