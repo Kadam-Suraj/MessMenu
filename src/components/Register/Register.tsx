@@ -18,7 +18,7 @@ import { register } from "@/assets"
 import { registerMess, User } from "@/database/registerMess"
 import { toast } from "@/hooks/use-toast"
 import { useNavigate } from "react-router-dom"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 
 
 const formSchema = z.object({
